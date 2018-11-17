@@ -1,6 +1,6 @@
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django_mt.mt_core.mysql',
         'NAME': 'djangothon',
         'USER': 'root',
         'PASSWORD': 'root',
@@ -31,15 +31,5 @@ DATABASES = {
         'OPTIONS': {
             'charset': 'utf8mb4'
         },
-    }
-}
-
-
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
     }
 }

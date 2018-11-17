@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 from django.conf import settings
 import uuid
 
+MAX_LENGTH = 191
+
 
 class BaseDateTimeModel(models.Model):
     created = models.DateTimeField(auto_now_add=True)
@@ -20,24 +22,24 @@ class BaseDateTimeUUIDModel(BaseDateTimeModel):
 
 
 class DbDetails(BaseDateTimeUUIDModel):
-    engine = models.CharField(max_length=191)
-    name = models.CharField(max_length=191)
-    user = models.CharField(max_length=191)
-    host = models.CharField(max_length=191)
+    engine = models.CharField(max_length=MAX_LENGTH)
+    name = models.CharField(max_length=MAX_LENGTH)
+    user = models.CharField(max_length=MAX_LENGTH)
+    host = models.CharField(max_length=MAX_LENGTH)
     port = models.IntegerField()
-    password = models.CharField(max_length=191)
+    password = models.CharField(max_length=MAX_LENGTH)
     options = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return 'DbDetails:{}-{}'.format(self.uuid, self.name)
 
 
-class UserDb(BaseDateTimeUUIDModel):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+class DomainDb(BaseDateTimeUUIDModel):
+    name = models.CharField(max_length=MAX_LENGTH)
     db = models.ForeignKey(DbDetails, on_delete=models.CASCADE)
 
     class Meta:
         unique_together = (('user', 'db'),)
 
     def __str__(self):
-        return 'UserDb:{}-user({})-db({})'.format(self.uuid, self.user, self.db)
+        return 'UserDb:{}-user({})-db({})'.format(self.uuid, self.name, self.db)
