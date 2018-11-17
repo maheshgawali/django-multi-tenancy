@@ -10,3 +10,8 @@ stop:
 dev:
 	python manage.py migrate
 	python manage.py runserver
+
+
+.PHONY: test
+test:
+	python manage.py test
