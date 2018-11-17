@@ -114,4 +114,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+import logging
+formatter = logging.Formatter(
+    '%(asctime)s - %(levelname)s [%(filename)s:%(lineno)s - %(funcName)20s() ]:: %(message)s'
+)
+logger = logging.getLogger('django_mt')
+logger.setLevel(logging.DEBUG)
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+ch.setFormatter(formatter)
+logger.addHandler(ch)
+
 from .local_settings import *
