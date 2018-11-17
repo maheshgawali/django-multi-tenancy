@@ -1,0 +1,116 @@
+[{
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$36000$8mzlv23PAhp5$rVkgcGtxdUJDuwcSwhoHrWFp2Eg4RWCKe+t4FB6zNKY:",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "user1@avoma.com",
+            "first_name": "user1",
+            "last_name": "lastname1",
+            "email": "user1@avoma.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2018-11-17T14:06:33.584Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$36000$8mzlv23PAhp5$rVkgcGtxdUJDuwcSwhoHrWFp2Eg4RWCKe+t4FB6zNKY:",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "user2@avoma.com",
+            "first_name": "user2",
+            "last_name": "lastname2",
+            "email": "user2@avoma.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2018-11-17T14:06:33.584Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "mt_core.db_details",
+        "pk": 1,
+        "fields": {
+            "uuid": "466c31d7-e82f-49be-bb7d-8bb5ca60fbac",
+            "engine": "django.db.backends.mysql",
+            "name": "user1",
+            "user": "root",
+            "host": "127.0.0.1",
+            "port": 3307,
+            "password": "root",
+            "options": {
+                "charset": "utf8mb4"
+            },
+            "created": "2018-11-17T14:06:33.584Z",
+            "modified": "2018-11-17T14:06:33.584Z"
+        }
+    },
+    {
+        "model": "mt_core.db_details",
+        "pk": 2,
+        "fields": {
+            "uuid": "466c31d7-e82f-49be-bb7d-8bb5ca60fbab",
+            "engine": "django.db.backends.mysql",
+            "name": "user2",
+            "user": "root",
+            "host": "127.0.0.1",
+            "port": 3308,
+            "password": "root",
+            "options": {
+                "charset": "utf8mb4"
+            },
+            "created": "2018-11-17T14:06:33.584Z",
+            "modified": "2018-11-17T14:06:33.584Z"
+        }
+    },
+    {
+        "model": "mt_core.db_details",
+        "pk": 3,
+        "fields": {
+            "uuid": "466c31d7-e82f-49be-bb7d-8bb5ca60fbae",
+            "engine": "django.db.backends.mysql",
+            "name": "user3",
+            "user": "root",
+            "host": "127.0.0.1",
+            "port": 3308,
+            "password": "root",
+            "options": {
+                "charset": "utf8mb4"
+            },
+            "created": "2018-11-17T14:06:33.584Z",
+            "modified": "2018-11-17T14:06:33.584Z"
+        }
+    },
+
+    {
+        "model": "mt_core.userdb",
+        "pk": 1,
+        "fields": {
+            "uuid": "466c31d7-e82f-49be-bb7d-8bb5ca60fkae",
+            "user_id": 1,
+            "db_id": 1,
+            "created": "2018-11-17T14:06:33.584Z",
+            "modified": "2018-11-17T14:06:33.584Z"
+        }
+    },
+    {
+        "model": "mt_core.userdb",
+        "pk": 2,
+        "fields": {
+            "uuid": "466c31d7-e82f-49be-bb7d-8bb5ca60fkaf",
+            "user_id": 2,
+            "db_id": 2,
+            "created": "2018-11-17T14:06:33.584Z",
+            "modified": "2018-11-17T14:06:33.584Z"
+        }
+    }
+
+
+]
