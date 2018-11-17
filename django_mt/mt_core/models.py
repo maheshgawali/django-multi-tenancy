@@ -39,7 +39,7 @@ class DomainDb(BaseDateTimeUUIDModel):
     db = models.ForeignKey(DbDetails, on_delete=models.CASCADE)
 
     class Meta:
-        unique_together = (('user', 'db'),)
+        unique_together = (('name', 'db'),)
 
     def __str__(self):
-        return 'UserDb:{}-user({})-db({})'.format(self.uuid, self.name, self.db)
+        return 'UserDb:{}-name({})-db({})'.format(self.uuid, self.name, self.db)
