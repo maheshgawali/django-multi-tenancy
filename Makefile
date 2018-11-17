@@ -5,3 +5,8 @@ start:
 .PHONY: stop
 stop:
 	docker-compose down
+
+.PHONY: dev
+dev:
+	python manage.py migrate
+	python manage.py runserver
