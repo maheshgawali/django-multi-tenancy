@@ -1,3 +1,4 @@
+import django
 from django.conf import settings
 from django import setup
 from .utils import get_tenant
