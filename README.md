@@ -29,9 +29,8 @@ You should see the `user2` object printed on the page. This is different user ob
 
 Use `make stop` to stop all containers of this app.
 
-Demo: https://youtu.be/Q0ihUxLz9Ks
 
-[![Demo](https://img.youtube.com/vi/https://youtu.be/Q0ihUxLz9Ks/0.jpg)](https://www.youtube.com/watch?v=https://youtu.be/Q0ihUxLz9Ks)
+[![Watch the demo](https://img.youtube.com/vi/Q0ihUxLz9Ks/maxresdefault.jpg)](https://youtu.be/Q0ihUxLz9Ks)
 
 
 
