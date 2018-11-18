@@ -57,7 +57,6 @@ class DatabaseWrapper(WRAPPED_BACKEND.DatabaseWrapper):
 
             connection = self.get_new_connection(updated_conn_params)
             # self.connection = connection
-
             return connection.cursor()
         else:
             LOGGER.info('--- using default db connection ---')
