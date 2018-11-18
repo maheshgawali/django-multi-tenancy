@@ -51,14 +51,16 @@ class DatabaseWrapper(WRAPPED_BACKEND.DatabaseWrapper):
             LOGGER.info('--- using default connection params ---')
             conn_params = self.default_db_info
 
+        LOGGER.info('BEFORE conn_params: %s', conn_params)
         self.settings_dict = conn_params
         updated_conn_params = self.get_connection_params()
+        LOGGER.info('AFTER updated_conn_params: %s', updated_conn_params)
 
         # LOGGER.info('BEFORE cursor.cursor.connection: %s',
         #             cursor.cursor.connection.__dict__)
 
         connection = self.get_new_connection(updated_conn_params)
-
+        self.connection = connection
         # LOGGER.info('AFTER get_new_connection connection: %s',
         #             connection.__dict__)
 
@@ -66,17 +68,22 @@ class DatabaseWrapper(WRAPPED_BACKEND.DatabaseWrapper):
 
         # LOGGER.info('cursor: %s', cursor.__dict__)
         # LOGGER.info('cursor.cursor: %s', cursor.cursor.__dict__)
+        # import pprint
+        # pprint.pprint(
+        #     'cursor.cursor.connection: %s' % cursor.cursor.connection.__dict__)
         # LOGGER.info('cursor.cursor.connection: %s',
         #             cursor.cursor.connection.__dict__)
         # LOGGER.info('cursor.db: %s', cursor.db.__dict__)
 
         # connection_db_name = getattr(connection, 'mt_db_name', None)
-
+        # db_name = conn_params['NAME']
         # if connection_db_name != db_name:
         #     start_time = time.time()
         #     cursor.execute('USE `%s`;' % db_name)
         #     time_ms = int((time.time() - start_time) * 1000)
         #     LOGGER.debug('Applied db_name `%s` in %s ms', db_name, time_ms)
+        #     connection.mt_db_name = db_name
+
         # connection.mt_db_name = conn_params['NAME']
 
         return cursor
