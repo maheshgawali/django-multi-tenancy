@@ -35,10 +35,10 @@ class MTMiddleware(MIDDLEWARE_MIXIN):
         connection.db_info = db_info
         LOGGER.info('AFTER connection: %s', connection.__dict__)
 
-        response = self.get_response(request)
-        return response
+        # response = self.get_response(request)
+        # return response
 
-    def process_response(self, request, response):
-        # reset the connection now
-        print("response: connection: %s" % connection.__dict__)
-        return response
+    # def process_response(self, request, response):
+    #     # reset the connection now
+    #     print("response: connection: %s" % connection.__dict__)
+    #     return response
