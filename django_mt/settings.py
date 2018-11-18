@@ -24,7 +24,8 @@ SECRET_KEY = 'y!i%$v3ht2-djvozwp(fd&+vus6kljso9^3(k6=&$c0=x*m@84'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ["*.app.com"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -35,7 +36,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django_mt.mt_core.middleware.MTMiddleware'
+    'django_mt.mt_core.middleware.MTMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,3 +128,14 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 
 from .local_settings import *
+
+CACHEOPS_REDIS = "redis://localhost:6381/1"
+
+CACHEOPS_DEFAULTS = {'timeout': 60 * 60}
+CACHEOPS = {
+    'mt_core.domaindb': {
+        'ops': ('fetch', 'get'),
+        'timeout': 60 * 15
+    },
+    '*.*': {},
+}

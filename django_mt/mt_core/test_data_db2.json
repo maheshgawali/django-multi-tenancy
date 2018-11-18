@@ -1,0 +1,18 @@
+[{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$120000$KAfDC4ME8sx9$7tfhykjVb9+M8f3w+2MJlIDyyH1GI4ozYBdCYYIpuDE=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "user2@avoma.com",
+        "first_name": "user2",
+        "last_name": "lastname2",
+        "email": "user2@avoma.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2018-11-17T14:06:33.584Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}]

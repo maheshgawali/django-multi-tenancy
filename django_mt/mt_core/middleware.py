@@ -1,4 +1,5 @@
 import django
+import logging
 from django.conf import settings
 from django import setup
 from .utils import get_tenant
@@ -9,6 +10,8 @@ if django.VERSION >= (1, 11, 0):
 else:
     MIDDLEWARE_MIXIN = object
 
+LOGGER = logging.getLogger('django_mt')
+
 
 class MTMiddleware(MIDDLEWARE_MIXIN):
 
@@ -18,30 +21,24 @@ class MTMiddleware(MIDDLEWARE_MIXIN):
     def process_request(self, request):
         # get hostname
         hostname = request.get_host().split(':')[0].lower()
-        print('hostname: %s' % (hostname))
+        LOGGER.info('hostname: %s' % (hostname))
 
         default_db_info = settings.DATABASES['default']
 
-        # get db_info - just put these tables in cacheops, we dont need to deal with redis explicitly
+        # get tenant db_info - just put these tables in cacheops, we dont need to deal with redis explicitly
         db_info = get_tenant(hostname)
+        LOGGER.info('db_info: %s' % db_info.__dict__)
+        LOGGER.info('default_db_info: %s' % default_db_info)
 
         # set db cursor via the database wrapper
+        LOGGER.info('BEFORE connection: %s', connection.__dict__)
         connection.db_info = db_info
-        # settings.Databases[db_obj.name] = {
-        #     'ENGINE': db_obj.engine,
-        #     'NAME': db_obj.name,
-        #     'USER': db_obj.user,
-        #     'PASSWORD': db_obj.password,
-        #     'HOST': db_obj.host,
-        #     'PORT': db_obj.port,
-        #     'OPTIONS': db_obj.options
-        # }
-        # db = settings.Databases[db_obj.name]
+        LOGGER.info('AFTER connection: %s', connection.__dict__)
 
         response = self.get_response(request)
         return response
 
     def process_response(self, request, response):
         # reset the connection now
-        connection.get_threadlocal().reset()
+        print("response: connection: %s" % connection.__dict__)
         return response
