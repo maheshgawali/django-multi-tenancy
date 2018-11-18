@@ -1,10 +1,10 @@
 from importlib import import_module
 import logging
 import time
-
+import json
 from django.core.exceptions import ImproperlyConfigured
 from django.conf import settings
-# import django.db.backends.mysql.base
+import django.db.backends.mysql.base
 WRAPPED_BACKEND = import_module('django.db.backends.mysql.base')
 
 LOGGER = logging.getLogger('django_mt')
@@ -31,7 +31,7 @@ class DatabaseWrapper(WRAPPED_BACKEND.DatabaseWrapper):
         LOGGER.info('if default_db_info: %s' % (self.default_db_info))
         conn_params = None
         if self.db_info:
-            LOGGER.info('db_info: %s' % (self.db_info))
+            LOGGER.info('db_info: %s', self.db_info.__dict__)
 
             # now init the connection using data from db_info and set it to cursor
             # connection = cursor.cursor.connection
@@ -43,7 +43,8 @@ class DatabaseWrapper(WRAPPED_BACKEND.DatabaseWrapper):
                 'PASSWORD': self.db_info.password,
                 'HOST': self.db_info.host,
                 'PORT': self.db_info.port,
-                'OPTIONS': self.db_info.options
+                # 'OPTIONS': json.loads(self.db_info.options)
+                'OPTIONS': {}
             }
         else:
             LOGGER.info('--- using default connection params ---')
@@ -62,11 +63,11 @@ class DatabaseWrapper(WRAPPED_BACKEND.DatabaseWrapper):
 
         cursor.cursor.connection = connection
 
-        LOGGER.info('cursor: %s', cursor.__dict__)
-        LOGGER.info('cursor.cursor: %s', cursor.cursor.__dict__)
-        LOGGER.info('cursor.cursor.connection: %s',
-                    cursor.cursor.connection.__dict__)
-        LOGGER.info('cursor.db: %s', cursor.db.__dict__)
+        # LOGGER.info('cursor: %s', cursor.__dict__)
+        # LOGGER.info('cursor.cursor: %s', cursor.cursor.__dict__)
+        # LOGGER.info('cursor.cursor.connection: %s',
+        #             cursor.cursor.connection.__dict__)
+        # LOGGER.info('cursor.db: %s', cursor.db.__dict__)
 
         # connection_db_name = getattr(connection, 'mt_db_name', None)
 

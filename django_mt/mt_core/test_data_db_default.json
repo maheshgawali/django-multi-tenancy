@@ -4,14 +4,12 @@
         "fields": {
             "uuid": "466c31d7-e82f-49be-bb7d-8bb5ca60fbac",
             "engine": "django.db.backends.mysql",
-            "name": "user1",
+            "name": "user1.app.com",
             "user": "root",
             "host": "127.0.0.1",
-            "port": 3307,
+            "port": 3308,
             "password": "root",
-            "options": {
-                "charset": "utf8mb4"
-            },
+            "options": "{\"options\": {\"charset\": \"utf8mb4\"}}",
             "created": "2018-11-17T14:06:33.584Z",
             "modified": "2018-11-17T14:06:33.584Z"
         }
@@ -22,14 +20,12 @@
         "fields": {
             "uuid": "466c31d7-e82f-49be-bb7d-8bb5ca60fbab",
             "engine": "django.db.backends.mysql",
-            "name": "user2",
+            "name": "user2.app.com",
             "user": "root",
             "host": "127.0.0.1",
-            "port": 3308,
+            "port": 3309,
             "password": "root",
-            "options": {
-                "charset": "utf8mb4"
-            },
+            "options": "{\"options\": {\"charset\": \"utf8mb4\"}}",
             "created": "2018-11-17T14:06:33.584Z",
             "modified": "2018-11-17T14:06:33.584Z"
         }
@@ -40,14 +36,12 @@
         "fields": {
             "uuid": "466c31d7-e82f-49be-bb7d-8bb5ca60fbae",
             "engine": "django.db.backends.mysql",
-            "name": "user3",
+            "name": "user3.app.com",
             "user": "root",
             "host": "127.0.0.1",
-            "port": 3308,
+            "port": 3310,
             "password": "root",
-            "options": {
-                "charset": "utf8mb4"
-            },
+            "options": "{\"options\": {\"charset\": \"utf8mb4\"}}",
             "created": "2018-11-17T14:06:33.584Z",
             "modified": "2018-11-17T14:06:33.584Z"
         }

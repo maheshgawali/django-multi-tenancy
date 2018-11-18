@@ -12,7 +12,7 @@ DATABASES = {
     },
     'db1': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangothon',
+        'NAME': 'user1.app.com',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',
@@ -23,7 +23,7 @@ DATABASES = {
     },
     'db2': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangothon',
+        'NAME': 'user2.app.com',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',
