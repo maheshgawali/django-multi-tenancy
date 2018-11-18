@@ -27,13 +27,13 @@ class MTMiddleware(MIDDLEWARE_MIXIN):
 
         # get tenant db_info - just put these tables in cacheops, we dont need to deal with redis explicitly
         db_info = get_tenant(hostname)
-        LOGGER.info('db_info: %s' % db_info.__dict__)
-        LOGGER.info('default_db_info: %s' % default_db_info)
+        # LOGGER.info('db_info: %s' % db_info.__dict__)
+        # LOGGER.info('default_db_info: %s' % default_db_info)
 
         # set db cursor via the database wrapper
-        LOGGER.info('BEFORE connection: %s', connection.__dict__)
+        # LOGGER.info('BEFORE connection: %s', connection.__dict__)
         connection.db_info = db_info
-        LOGGER.info('AFTER connection: %s', connection.__dict__)
+        # LOGGER.info('AFTER connection: %s', connection.__dict__)
 
         # response = self.get_response(request)
         # return response
