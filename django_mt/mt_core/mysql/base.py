@@ -47,19 +47,17 @@ class DatabaseWrapper(WRAPPED_BACKEND.DatabaseWrapper):
                 'OPTIONS': {},
                 'AUTOCOMMIT': False
             }
+            # LOGGER.info('BEFORE conn_params: %s', conn_params)
+            self.settings_dict = conn_params
+            updated_conn_params = self.get_connection_params()
+            # LOGGER.info('AFTER updated_conn_params: %s', updated_conn_params)
+
+            # LOGGER.info('BEFORE cursor.cursor.connection: %s',
+            #             cursor.cursor.connection.__dict__)
+
+            connection = self.get_new_connection(updated_conn_params)
+            # self.connection = connection
+            return connection.cursor()
         else:
             LOGGER.info('--- using default db connection ---')
-            conn_params = self.default_db_info
-
-        # LOGGER.info('BEFORE conn_params: %s', conn_params)
-        self.settings_dict = conn_params
-        updated_conn_params = self.get_connection_params()
-        # LOGGER.info('AFTER updated_conn_params: %s', updated_conn_params)
-
-        # LOGGER.info('BEFORE cursor.cursor.connection: %s',
-        #             cursor.cursor.connection.__dict__)
-
-        connection = self.get_new_connection(updated_conn_params)
-        # self.connection = connection
-
-        return connection.cursor()
+            return cursor
