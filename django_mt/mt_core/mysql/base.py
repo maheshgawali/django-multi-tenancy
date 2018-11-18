@@ -44,7 +44,8 @@ class DatabaseWrapper(WRAPPED_BACKEND.DatabaseWrapper):
                 'HOST': self.db_info.host,
                 'PORT': self.db_info.port,
                 # 'OPTIONS': json.loads(self.db_info.options)
-                'OPTIONS': {}
+                'OPTIONS': {},
+                'AUTOCOMMIT': False
             }
         else:
             LOGGER.info('--- using default connection params ---')
