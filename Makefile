@@ -36,5 +36,5 @@ load_base_test_data:
 	python manage.py loaddata django_mt/mt_core/test_data_db1 --database=db1
 	python manage.py loaddata django_mt/mt_core/test_data_db2 --database=db2
 
-.PHONY: setup
-setup:hosts migrate load_base_test_data
+.PHONY: test-setup
+test-setup:hosts migrate load_base_test_data
