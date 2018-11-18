@@ -28,3 +28,12 @@ Visit `http://user2.app.com:8000/login/` in the browser.
 You should see the `user2` object printed on the page. This is different user object than previous and it is loaded from different database.
 
 Use `make stop` to stop all containers of this app.
+
+Demo: https://youtu.be/Q0ihUxLz9Ks
+
+[![Demo](https://img.youtube.com/vi/https://youtu.be/Q0ihUxLz9Ks/0.jpg)](https://www.youtube.com/watch?v=https://youtu.be/Q0ihUxLz9Ks)
+
+
+
+Presentation: https://docs.google.com/presentation/d/1bLRYOUR302Hrq-1VyrlvamBtvUBfc1d3zYigw_rOxeo/edit?usp=sharing
+
