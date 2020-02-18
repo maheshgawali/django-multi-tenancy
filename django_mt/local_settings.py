@@ -1,35 +1,26 @@
 DATABASES = {
     'default': {
-        'ENGINE': 'django_mt.mt_core.mysql',
+        'ENGINE': 'django_mt.mt_core.postgres',
         'NAME': 'djangothon',
-        'USER': 'root',
-        'PASSWORD': 'root',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
         'HOST': '127.0.0.1',
-        'PORT': 3307,
-        'OPTIONS': {
-            'charset': 'utf8mb4'
-        },
+        'PORT': 5432
     },
-    'db1': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'user1.app.com',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': 3308,
-        'OPTIONS': {
-            'charset': 'utf8mb4'
-        },
-    },
-    'db2': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'user2.app.com',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': 3309,
-        'OPTIONS': {
-            'charset': 'utf8mb4'
-        },
-    }
+    # 'db1': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'user1.app.com',
+    #     'USER': 'root',
+    #     'PASSWORD': 'root',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': 3308
+    # },
+    # 'db2': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'user2.app.com',
+    #     'USER': 'root',
+    #     'PASSWORD': 'root',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': 3309
+    # }
 }

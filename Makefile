@@ -38,3 +38,20 @@ load_base_test_data:
 
 .PHONY: test-setup
 test-setup: hosts migrate load_base_test_data
+
+.PHONY: timescale
+timescale: 
+	$(info ************  Starting timescaledb shell ************)
+	docker exec -it timescale psql -h localhost -U postgres
+
+.PHONY: timescale_init_db
+timescale_init_db: 
+	$(info ************  Initializing timescaledb with base database ************)
+	# docker exec -it timescale createdb djangothon
+	# docker exec -it timescale psql -h localhost -U postgres -c "SELECT 'CREATE DATABASE djangothon;' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'djangothon');"
+	docker exec -it timescale psql -h localhost -U postgres -c "CREATE DATABASE djangothon;"
+
+.PHONY: timescale_list_dbs
+timescale_list_dbs: 
+	$(info ************  Starting timescaledb shell ************)
+	docker exec -it timescale psql -h localhost -U postgres -l
